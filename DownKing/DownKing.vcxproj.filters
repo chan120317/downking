@@ -13,13 +13,99 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Engine">
+      <UniqueIdentifier>{d79c7882-0abb-4647-9d74-0c830d21f02c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GamePage">
+      <UniqueIdentifier>{268406f5-f60d-499b-849d-baccb03e94a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\IntroPage">
+      <UniqueIdentifier>{c0a73a22-bc4d-48e1-8bfa-3b918cc5a978}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EndPage">
+      <UniqueIdentifier>{9159fccd-1bce-40e3-bccb-e7a0fd6fc9fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="GameContext.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFont.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameImage.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRenderer.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameResources.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceCollection.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PageRouter.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="EndingPage.cpp">
+      <Filter>소스 파일\EndPage</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePage.cpp">
+      <Filter>소스 파일\GamePage</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroPage.cpp">
+      <Filter>소스 파일\IntroPage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContext.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFont.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameImage.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRenderer.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameResources.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCollection.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="PageRouter.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="IPage.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingPage.h">
+      <Filter>소스 파일\EndPage</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePage.h">
+      <Filter>소스 파일\GamePage</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroPage.h">
+      <Filter>소스 파일\IntroPage</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
