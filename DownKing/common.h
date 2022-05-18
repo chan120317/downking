@@ -10,4 +10,5 @@ enum class FontResources {
 };
 
 enum class ImageResources {
+	player,
 };

@@ -63,6 +63,9 @@
     <ClCompile Include="IntroPage.cpp">
       <Filter>소스 파일\IntroPage</Filter>
     </ClCompile>
+    <ClCompile Include="CoordinateConverter.cpp">
+      <Filter>소스 파일\GamePage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -106,6 +109,12 @@
     </ClInclude>
     <ClInclude Include="IntroPage.h">
       <Filter>소스 파일\IntroPage</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CoordinateConverter.h">
+      <Filter>소스 파일\GamePage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

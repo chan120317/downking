@@ -11,7 +11,7 @@ GameResources* loadGameResources();
 int main(int argc, char** argv) {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	TTF_Init();
-	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 1280, 720, 0);
+	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 800, 600, 0);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 
 	PageRouter* router = new PageRouter();
@@ -59,6 +59,8 @@ int main(int argc, char** argv) {
 GameResources* loadGameResources()
 {
 	GameResources* res = new GameResources();
+
+	res->images.set(ImageResources::player, new GameImage("res/image/player.png", 32, 32));
 
 	return res;
 }

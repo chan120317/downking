@@ -1,4 +1,5 @@
 #pragma once
+#include "util.h"
 #include "IPage.h"
 #include "GameContext.h"
 
@@ -14,5 +15,14 @@ public:
 	void onKeyDown(SDL_Keycode keyCode);
 private:
 	const GameContext* ctx;
+
+	void process(Uint64 currentTick);
+	void render();
+
+
+	Point<double> playerPos;
+	Point<double> camera;
+
+	Point<double> playerV, playerA;
 };
 
