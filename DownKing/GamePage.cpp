@@ -24,12 +24,17 @@ GamePage::~GamePage()
 
 void GamePage::init()
 {
+	lastTick = 0;
+
 	playerPos = Point<double>(50, 50);
 	playerV = Point<double>(0, 0);
 	playerA = Point<double>(0, 0);
 
+	camera = { 0,0 };
+
 	playerDirection = 0;
 
+	floors.clear();
 	{
 		auto floor = new DownFloorStatic();
 		floor->posY = 200;
@@ -119,6 +124,12 @@ void GamePage::process(Uint64 currentTick)
 	if (isFloor) {
 		newPlayerY = floorY - GAME_PLAYER_H;
 		playerV.y = 0;
+	}
+
+	// »ç¸Á ÆÇÁ¤
+	if (newPlayerY < camera.y) {
+		ctx->router->changePage(PageKeys::endingPage);
+		return;
 	}
 
 	playerPos.y = newPlayerY;
