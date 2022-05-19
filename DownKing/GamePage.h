@@ -1,7 +1,9 @@
 #pragma once
+#include <deque>
 #include "util.h"
 #include "IPage.h"
 #include "GameContext.h"
+#include "DownFloorBase.h"
 
 class GamePage: public IPage
 {
@@ -19,10 +21,13 @@ private:
 	void process(Uint64 currentTick);
 	void render();
 
+	Uint64 lastTick;
 
 	Point<double> playerPos;
 	Point<double> camera;
 
 	Point<double> playerV, playerA;
+
+	std::deque<DownFloorBase*> floors;
 };
 

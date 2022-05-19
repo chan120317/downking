@@ -117,3 +117,8 @@ void GameRenderer::drawImageRotate(GameImage* image, int x, int y, int w, int h,
 
 	SDL_RenderCopyEx(this->sdlRen, image->getTexture(this->sdlRen), &src, &dest, angle, &center, SDL_FLIP_NONE);
 }
+
+void GameRenderer::drawLine(int x1, int y1, int x2, int y2)
+{
+	SDL_RenderDrawLine(this->sdlRen, x1, y1, x2, y2);
+}

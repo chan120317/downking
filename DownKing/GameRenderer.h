@@ -18,6 +18,7 @@ public:
 	void drawImageRaw(GameImage* image, int x, int y);
 	void drawImage(GameImage* image, int x, int y, int w, int h);
 	void drawImageRotate(GameImage* image, int x, int y, int w, int h, double angle, int centerX, int centerY);
+	void drawLine(int x1, int y1, int x2, int y2);
 private:
 	SDL_Renderer* sdlRen;
 };

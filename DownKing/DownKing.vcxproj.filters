@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\EndPage">
       <UniqueIdentifier>{9159fccd-1bce-40e3-bccb-e7a0fd6fc9fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GamePage\Floor">
+      <UniqueIdentifier>{d2eeee6e-090a-4b64-a013-f023d67aa5f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="CoordinateConverter.cpp">
       <Filter>소스 파일\GamePage</Filter>
+    </ClCompile>
+    <ClCompile Include="DownFloorStatic.cpp">
+      <Filter>소스 파일\GamePage\Floor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +121,15 @@
     </ClInclude>
     <ClInclude Include="CoordinateConverter.h">
       <Filter>소스 파일\GamePage</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorBase.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorStatic.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="DownInfoFloor.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
