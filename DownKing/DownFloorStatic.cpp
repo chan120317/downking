@@ -22,9 +22,10 @@ void DownFloorStatic::process(Uint64 currentTick)
 
 }
 
-void DownFloorStatic::render(GameRenderer* renderer)
+void DownFloorStatic::render(GameRenderer* renderer, CoordinateConverter* conv)
 {
 	for (const auto& line : lines) {
-		renderer->drawLine(line.left, posY, line.right, posY);
+		auto newY = conv->convertY(posY);
+		renderer->drawLine(line.left, newY, line.right, newY);
 	}
 }

@@ -4,8 +4,9 @@
 #include "DownFloorStatic.h"
 
 constexpr double GAME_GRAVITY = 5.0;
-constexpr double GAME_PLAYER_MAX_V_Y = 40.0;
+constexpr double GAME_PLAYER_MAX_V_Y = 80.0;
 constexpr double GAME_PLAYER_SPEED = 200.0;
+constexpr double GAME_SCROLL_SPEED = 10.0;
 
 constexpr double GAME_PLAYER_W = 32.0;
 constexpr double GAME_PLAYER_H = 32.0;
@@ -95,6 +96,8 @@ void GamePage::process(Uint64 currentTick)
 {
 	const auto t = double(currentTick - lastTick) / 100;
 
+	camera.y += GAME_SCROLL_SPEED * t;
+
 	for (auto floor : floors) {
 		floor->process(currentTick);
 	}
@@ -154,7 +157,7 @@ void GamePage::render()
 
 
 	for (auto floor : floors) {
-		floor->render(ctx->renderer);
+		floor->render(ctx->renderer, &converter);
 	}
 
 	ctx->renderer->render();

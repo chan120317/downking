@@ -8,7 +8,7 @@ public:
 	~DownFloorStatic();
 	void init();
 	void process(Uint64 currentTick);
-	void render(GameRenderer* renderer);
+	void render(GameRenderer* renderer, CoordinateConverter* conv);
 
 	
 };
