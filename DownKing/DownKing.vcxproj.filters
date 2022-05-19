@@ -72,6 +72,9 @@
     <ClCompile Include="DownFloorStatic.cpp">
       <Filter>소스 파일\GamePage\Floor</Filter>
     </ClCompile>
+    <ClCompile Include="DownFloorFactory.cpp">
+      <Filter>소스 파일\GamePage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -130,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="DownInfoFloor.h">
       <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorFactory.h">
+      <Filter>소스 파일\GamePage</Filter>
+    </ClInclude>
+    <ClInclude Include="random.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

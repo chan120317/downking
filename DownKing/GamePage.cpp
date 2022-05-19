@@ -1,12 +1,13 @@
 #include <iostream>
 #include "GamePage.h"
 #include "CoordinateConverter.h"
-#include "DownFloorStatic.h"
+#include "DownFloorFactory.h"
 
 constexpr double GAME_GRAVITY = 5.0;
 constexpr double GAME_PLAYER_MAX_V_Y = 80.0;
-constexpr double GAME_PLAYER_SPEED = 200.0;
+constexpr double GAME_PLAYER_SPEED = 300.0;
 constexpr double GAME_SCROLL_SPEED = 10.0;
+constexpr double GAME_FLOOR_GAP = 150.0;
 
 constexpr double GAME_PLAYER_W = 32.0;
 constexpr double GAME_PLAYER_H = 32.0;
@@ -35,27 +36,20 @@ void GamePage::init()
 	playerDirection = 0;
 
 	floors.clear();
+
 	{
-		auto floor = new DownFloorStatic();
-		floor->posY = 200;
-		floors.push_back(floor);
+		auto floor = DownFloorFactory::create();
+		floor->posY = camera.y + GAME_SCREEN_HEIGHT - GAME_FLOOR_GAP;
 		floor->init();
-	}
-	
-	{
-		auto floor = new DownFloorStatic();
-		floor->posY = 400;
 		floors.push_back(floor);
-		floor->init();
-	}
-	{
-		auto floor = new DownFloorStatic();
-		floor->posY = 600;
-		floors.push_back(floor);
-		floor->init();
 	}
 
-
+	{
+		auto floor = DownFloorFactory::create();
+		floor->posY = camera.y + GAME_SCREEN_HEIGHT;
+		floor->init();
+		floors.push_back(floor);
+	}
 }
 
 void GamePage::tick(Uint64 currentTick)
@@ -102,6 +96,21 @@ void GamePage::process(Uint64 currentTick)
 	const auto t = double(currentTick - lastTick) / 100;
 
 	camera.y += GAME_SCROLL_SPEED * t;
+
+	// 발판 추가
+	if (floors.empty() || floors.back()->posY - camera.y < GAME_SCREEN_HEIGHT) {
+		auto floor = DownFloorFactory::create();
+		floor->posY = camera.y + GAME_SCREEN_HEIGHT + GAME_FLOOR_GAP;
+		floor->init();
+		floors.push_back(floor);
+	}
+
+	if (!floors.empty() && floors.front()->posY - camera.y < 0) {
+		delete floors.front();
+		floors.pop_front();
+	}
+
+	std::cout << floors.size() << std::endl;
 
 	for (auto floor : floors) {
 		floor->process(currentTick);

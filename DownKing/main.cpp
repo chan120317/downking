@@ -5,10 +5,12 @@
 #include "EndingPage.h"
 #include "IntroPage.h"
 #include "EventHandler.h"
+#include "util.h"
 
 GameResources* loadGameResources();
 
 int main(int argc, char** argv) {
+
 	SDL_Init(SDL_INIT_EVERYTHING);
 	TTF_Init();
 	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 600, 800, 0);
