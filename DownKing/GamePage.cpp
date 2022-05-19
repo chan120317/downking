@@ -60,4 +60,12 @@ void GamePage::render()
 	ctx->renderer->drawImage(playerImage, screenPlayer.x, screenPlayer.y, playerImage->width, playerImage->height);
 
 	ctx->renderer->render();
+
+	auto backGroundImage = ctx->resources->images.get(ImageResources::background);
+	//ctx->renderer->drawImage(backGroundImage, 0, 0, background->width, background->height);
+	//배경 사이즈 조절 필요 무조건
+	//ctx->renderer->render();
+	auto stopBlock1 = ctx->resources->images.get(ImageResources::stopBlock1);
+	ctx->renderer->drawImage(stopBlock1, 200, 200, stopBlock1->width, stopBlock1->height);
+
 }
