@@ -8,6 +8,8 @@ constexpr double GAME_PLAYER_MAX_V_Y = 80.0;
 constexpr double GAME_PLAYER_SPEED = 300.0;
 constexpr double GAME_SCROLL_SPEED = 10.0;
 constexpr double GAME_FLOOR_GAP = 150.0;
+constexpr double GAME_CAMERA_HALF_SPEED_LINE = 700;
+constexpr double GAME_CAMERA_FULL_SPEED_LINE = 780;
 
 constexpr double GAME_PLAYER_W = 32.0;
 constexpr double GAME_PLAYER_H = 32.0;
@@ -95,7 +97,17 @@ void GamePage::process(Uint64 currentTick)
 {
 	const auto t = double(currentTick - lastTick) / 100;
 
-	camera.y += GAME_SCROLL_SPEED * t;
+	
+	if (playerPos.y - camera.y >= GAME_CAMERA_FULL_SPEED_LINE) {
+		camera.y += GAME_PLAYER_MAX_V_Y * t;
+	}
+	else if (playerPos.y - camera.y >= GAME_CAMERA_HALF_SPEED_LINE) {
+		camera.y += (GAME_PLAYER_MAX_V_Y - GAME_SCROLL_SPEED) / 2 * t;
+	}
+	else {
+		camera.y += GAME_SCROLL_SPEED * t;
+	}
+	
 
 	// 발판 추가
 	if (floors.empty() || floors.back()->posY - camera.y < GAME_SCREEN_HEIGHT) {
