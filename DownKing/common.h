@@ -33,5 +33,4 @@ enum class ImageResources {
 	blinkBlock2,
 	blinkBlockleft,
 	blinkBlockright,
-
 };

@@ -88,6 +88,5 @@ GameResources* loadGameResources()
 	res->images.set(ImageResources::blinkBlockleft, new GameImage("res/image/ggam1lmac.png", 32, 32));
 	res->images.set(ImageResources::blinkBlockright, new GameImage("res/image/ggam1rmac.png", 32, 32));
 
-
 	return res;
 }
