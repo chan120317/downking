@@ -110,8 +110,6 @@ void GamePage::process(Uint64 currentTick)
 		floors.pop_front();
 	}
 
-	std::cout << floors.size() << std::endl;
-
 	for (auto floor : floors) {
 		floor->process(currentTick);
 	}
@@ -158,10 +156,14 @@ void GamePage::render()
 {
 	ctx->renderer->clear();
 
-	auto backGroundImage = ctx->resources->images.get(ImageResources::background);
-	ctx->renderer->drawImage(backGroundImage, 0, 0, backGroundImage->width, backGroundImage->height);
-
 	CoordinateConverter converter(camera);
+	{
+		auto backGroundImage = ctx->resources->images.get(ImageResources::background);
+		int delta = int(camera.y) % backGroundImage->height;
+		ctx->renderer->drawImage(backGroundImage, 0, -delta, backGroundImage->width, backGroundImage->height);
+		ctx->renderer->drawImage(backGroundImage, 0, -delta + backGroundImage->height, backGroundImage->width, backGroundImage->height);
+	}
+
 
 	auto screenPlayer = converter.convert(playerPos);
 	auto playerImage = ctx->resources->images.get(ImageResources::player);
