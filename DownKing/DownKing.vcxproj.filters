@@ -75,6 +75,12 @@
     <ClCompile Include="DownFloorFactory.cpp">
       <Filter>소스 파일\GamePage</Filter>
     </ClCompile>
+    <ClCompile Include="GameMusic.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSound.cpp">
+      <Filter>소스 파일\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -139,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="random.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMusic.h">
+      <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSound.h">
+      <Filter>소스 파일\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

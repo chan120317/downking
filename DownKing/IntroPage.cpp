@@ -11,6 +11,7 @@ IntroPage::~IntroPage()
 
 void IntroPage::init()
 {
+	ctx->resources->musics.get(MusicResources::menu)->play();
 }
 
 void IntroPage::tick(Uint64 currentTick)

@@ -147,9 +147,11 @@
     <ClCompile Include="GameContext.cpp" />
     <ClCompile Include="GameFont.cpp" />
     <ClCompile Include="GameImage.cpp" />
+    <ClCompile Include="GameMusic.cpp" />
     <ClCompile Include="GamePage.cpp" />
     <ClCompile Include="GameRenderer.cpp" />
     <ClCompile Include="GameResources.cpp" />
+    <ClCompile Include="GameSound.cpp" />
     <ClCompile Include="IntroPage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PageRouter.cpp" />
@@ -170,9 +172,11 @@
     <ClInclude Include="GameContext.h" />
     <ClInclude Include="GameFont.h" />
     <ClInclude Include="GameImage.h" />
+    <ClInclude Include="GameMusic.h" />
     <ClInclude Include="GamePage.h" />
     <ClInclude Include="GameRenderer.h" />
     <ClInclude Include="GameResources.h" />
+    <ClInclude Include="GameSound.h" />
     <ClInclude Include="IntroPage.h" />
     <ClInclude Include="IPage.h" />
     <ClInclude Include="PageRouter.h" />

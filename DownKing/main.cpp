@@ -10,8 +10,9 @@
 GameResources* loadGameResources();
 
 int main(int argc, char** argv) {
-
 	SDL_Init(SDL_INIT_EVERYTHING);
+	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+	Mix_VolumeMusic(10);
 	TTF_Init();
 	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 600, 800, 0);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
@@ -54,6 +55,7 @@ int main(int argc, char** argv) {
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	TTF_Quit();
+	Mix_CloseAudio();
 	return 0;
 }
 
@@ -87,6 +89,9 @@ GameResources* loadGameResources()
 	res->images.set(ImageResources::blinkBlock2, new GameImage("res/image/ggam2.png", 64, 32));
 	res->images.set(ImageResources::blinkBlockleft, new GameImage("res/image/ggam1lmac.png", 32, 32));
 	res->images.set(ImageResources::blinkBlockright, new GameImage("res/image/ggam1rmac.png", 32, 32));
+
+	res->musics.set(MusicResources::background, new GameMusic("res/music/background.mp3"));
+	res->musics.set(MusicResources::menu, new GameMusic("res/music/menu.mp3"));
 
 	return res;
 }

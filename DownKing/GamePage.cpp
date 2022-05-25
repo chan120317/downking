@@ -27,6 +27,8 @@ GamePage::~GamePage()
 
 void GamePage::init()
 {
+	ctx->resources->musics.get(MusicResources::background)->play();
+
 	lastTick = 0;
 
 	playerPos = Point<double>(50, 50);

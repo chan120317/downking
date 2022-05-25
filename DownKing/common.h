@@ -34,3 +34,15 @@ enum class ImageResources {
 	blinkBlockleft,
 	blinkBlockright,
 };
+
+enum class MusicResources {
+	background,
+	menu,
+};
+
+enum class SoundResources {
+	opening,
+	click,
+	gameover,
+
+};
