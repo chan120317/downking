@@ -75,6 +75,15 @@
     <ClCompile Include="DownFloorFactory.cpp">
       <Filter>소스 파일\GamePage</Filter>
     </ClCompile>
+    <ClCompile Include="DownFloorMoveLeft.cpp">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClCompile>
+    <ClCompile Include="DownFloorMoveRight.cpp">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClCompile>
+    <ClCompile Include="random.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -139,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="random.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorMoveLeft.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorMoveRight.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

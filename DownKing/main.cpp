@@ -6,16 +6,16 @@
 #include "IntroPage.h"
 #include "EventHandler.h"
 #include "util.h"
-
+#include <iostream>
 GameResources* loadGameResources();
 
 int main(int argc, char** argv) {
-
 	SDL_Init(SDL_INIT_EVERYTHING);
 	TTF_Init();
 	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 600, 800, 0);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
-
+	
+	std::cout << 111;
 	PageRouter* router = new PageRouter();
 	GameRenderer* gameRenderer = new GameRenderer(renderer);
 
@@ -67,26 +67,27 @@ GameResources* loadGameResources()
 
 	res->images.set(ImageResources::player, new GameImage("res/image/player.png", 32, 32));
 	res->images.set(ImageResources::background, new GameImage("res/image/background.png", 600, 1600));
+	res->images.set(ImageResources::introImage, new GameImage("res/image/intro_background.png", 600, 800));
 	
-	res->images.set(ImageResources::stopBlock1, new GameImage("res/image/s1.png", 32, 32));
+	res->images.set(ImageResources::stopBlock1, new GameImage("res/image/s1.png", 36, 44));
 	res->images.set(ImageResources::stopBlock2, new GameImage("res/image/s2.png", 64, 32));
-	res->images.set(ImageResources::stopBlockleft, new GameImage("res/image/s1lmac.png", 32, 32));
-	res->images.set(ImageResources::stopBlockright, new GameImage("res/image/s1rmac.png", 32, 32));
+	res->images.set(ImageResources::stopBlockleft, new GameImage("res/image/s1lmac.png", 40, 44));
+	res->images.set(ImageResources::stopBlockright, new GameImage("res/image/s1rmac.png", 40, 44));
 
-	res->images.set(ImageResources::rightBlock1, new GameImage("res/image/rm1.png", 32, 32));
+	res->images.set(ImageResources::rightBlock1, new GameImage("res/image/rm1.png", 36, 44));
 	res->images.set(ImageResources::rightBlock2, new GameImage("res/image/rm2.png", 64, 32));
-	res->images.set(ImageResources::rightBlockleft, new GameImage("res/image/rm1lmac.png", 32, 32));
-	res->images.set(ImageResources::rightBlockright, new GameImage("res/image/rm1rmac.png", 32, 32));
+	res->images.set(ImageResources::rightBlockleft, new GameImage("res/image/rm1lmac.png", 40, 44));
+	res->images.set(ImageResources::rightBlockright, new GameImage("res/image/rm1rmac.png", 40, 44));
 
-	res->images.set(ImageResources::leftBlock1, new GameImage("res/image/lm1.png", 32, 32));
+	res->images.set(ImageResources::leftBlock1, new GameImage("res/image/lm1.png", 36, 44));
 	res->images.set(ImageResources::leftBlock2, new GameImage("res/image/lm2.png", 64, 32));
-	res->images.set(ImageResources::leftBlockleft, new GameImage("res/image/lm1lmac.png", 32, 32));
-	res->images.set(ImageResources::leftBlockright, new GameImage("res/image/lm1rmac.png", 32, 32));
+	res->images.set(ImageResources::leftBlockleft, new GameImage("res/image/lm1lmac.png", 40, 44));
+	res->images.set(ImageResources::leftBlockright, new GameImage("res/image/lm1rmac.png", 40, 44));
 
-	res->images.set(ImageResources::blinkBlock1, new GameImage("res/image/ggam1.png", 32, 32));
+	res->images.set(ImageResources::blinkBlock1, new GameImage("res/image/ggam1.png", 36, 44));
 	res->images.set(ImageResources::blinkBlock2, new GameImage("res/image/ggam2.png", 64, 32));
-	res->images.set(ImageResources::blinkBlockleft, new GameImage("res/image/ggam1lmac.png", 32, 32));
-	res->images.set(ImageResources::blinkBlockright, new GameImage("res/image/ggam1rmac.png", 32, 32));
+	res->images.set(ImageResources::blinkBlockleft, new GameImage("res/image/ggam1lmac.png", 40, 44));
+	res->images.set(ImageResources::blinkBlockright, new GameImage("res/image/ggam1rmac.png", 40, 44));
 
 	return res;
 }

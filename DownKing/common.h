@@ -17,6 +17,7 @@ enum class FontResources {
 enum class ImageResources {
 	player,
 	background,
+	introImage,
 	stopBlock1,
 	stopBlock2, 
 	stopBlockleft,

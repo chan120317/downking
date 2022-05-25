@@ -1,15 +1,18 @@
 #pragma once
 #include "DownFloorBase.h"
 
-class DownFloorStatic : public DownFloorBase
+class DownFloorMoveLeft : public DownFloorBase
 {
 public:
-	DownFloorStatic();
-	~DownFloorStatic();
+	DownFloorMoveLeft();
+	~DownFloorMoveLeft();
 	void init();
 	void process(Uint64 currentTick);
 	void render(const GameContext* ctx, CoordinateConverter* conv);
+
 private:
-	
+	Uint64 lastTick;
+	double MOVESPEED;
+	double holeLeft;
 };
 
