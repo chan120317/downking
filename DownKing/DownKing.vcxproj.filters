@@ -81,6 +81,15 @@
     <ClCompile Include="GameSound.cpp">
       <Filter>소스 파일\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="DownFloorMoveLeft.cpp">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClCompile>
+    <ClCompile Include="DownFloorMoveRight.cpp">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClCompile>
+    <ClCompile Include="random.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -151,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="GameSound.h">
       <Filter>소스 파일\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorMoveLeft.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorMoveRight.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

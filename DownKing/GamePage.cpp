@@ -119,7 +119,7 @@ void GamePage::process(Uint64 currentTick)
 		floors.push_back(floor);
 	}
 
-	if (!floors.empty() && floors.front()->posY - camera.y < 0) {
+	if (!floors.empty() && floors.front()->posY - camera.y < -100) {
 		delete floors.front();
 		floors.pop_front();
 	}
@@ -188,12 +188,9 @@ void GamePage::render()
 		ctx->renderer->drawImage(playerImage, screenPlayer.x, screenPlayer.y, playerImage->width, playerImage->height);
 	}
 	
-	//auto stopBlock1 = ctx->resources->images.get(ImageResources::stopBlock1);
-	//ctx->renderer->drawImage(stopBlock1, 200, 200, stopBlock1->width, stopBlock1->height);
-
 
 	for (auto floor : floors) {
-		floor->render(ctx->renderer, &converter);
+		floor->render(ctx, &converter);
 	}
 
 	ctx->renderer->render();
