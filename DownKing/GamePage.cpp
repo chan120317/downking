@@ -4,13 +4,14 @@
 #include "CoordinateConverter.h"
 #include "DownFloorFactory.h"
 
-
+long long highScore = 0;
 
 GamePage::GamePage(const GameContext* ctx) : 
 	ctx(ctx),
 	lastTick(0),
 	playerDirection(0),
-	isGameOver(false)
+	isGameOver(false),
+	score(0)
 {
 }
 
@@ -23,6 +24,7 @@ void GamePage::init()
 	ctx->resources->musics.get(MusicResources::background)->play();
 	ctx->resources->sounds.get(SoundResources::click)->play();
 
+	score = 0;
 	lastTick = 0;
 	isGameOver = false;
 
@@ -151,11 +153,16 @@ void GamePage::process(Uint64 currentTick)
 		playerV.y = 0;
 	}
 
+	// 스코어 계산
+	score = (long long)(playerPos.y) / 100;
+
 	// 사망 판정
 	if (newPlayerY < camera.y) {
 		ctx->resources->sounds.get(SoundResources::gameover)->play();
 		ctx->resources->musics.get(MusicResources::background)->stop();
-		//ctx->router->changePage(PageKeys::endingPage);
+		
+		highScore = std::max(highScore, score);
+		
 		isGameOver = true;
 		return;
 	}
@@ -202,7 +209,6 @@ void GamePage::render()
 
 	{
 		auto font = ctx->resources->fonts.get(FontResources::uiFont);
-		long long score = (long long)(playerPos.y) / 100;
 		std::string str = "Score: ";
 		str += std::to_string(score);
 		ctx->renderer->drawText(font, str, 10, 10, { 255,255,255 });

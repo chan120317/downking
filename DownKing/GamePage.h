@@ -28,6 +28,7 @@ private:
 
 	Uint64 lastTick;
 
+	long long score;
 	bool isGameOver;
 
 	Point<double> playerPos;
