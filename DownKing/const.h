@@ -10,7 +10,7 @@ constexpr int GAME_SCREEN_HEIGHT = 800;
 // GAME CONFIG
 
 // 중력 가속도
-constexpr double GAME_GRAVITY = 5.0;
+constexpr double GAME_GRAVITY = 7.0;
 
 // 플레이어의 최대 낙하 속도, 이 값 이상으로는 수직 속도가 증가하지 않음
 constexpr double GAME_PLAYER_MAX_V_Y = 80.0;
@@ -19,7 +19,7 @@ constexpr double GAME_PLAYER_MAX_V_Y = 80.0;
 constexpr double GAME_PLAYER_SPEED = 300.0;
 
 // 화면이 밑으로 이동하는 속도
-constexpr double GAME_SCROLL_SPEED = 10.0;
+constexpr double GAME_SCROLL_SPEED = 20.0;
 
 // 발판과 발판 사이의 간격
 constexpr double GAME_FLOOR_GAP = 150.0;

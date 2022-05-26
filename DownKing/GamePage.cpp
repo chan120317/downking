@@ -20,10 +20,11 @@ GamePage::~GamePage()
 void GamePage::init()
 {
 	ctx->resources->musics.get(MusicResources::background)->play();
+	ctx->resources->sounds.get(SoundResources::click)->play();
 
 	lastTick = 0;
 
-	playerPos = Point<double>(50, 50);
+	playerPos = Point<double>(100, 300);
 	playerV = Point<double>(0, 0);
 	playerA = Point<double>(0, 0);
 
@@ -141,6 +142,8 @@ void GamePage::process(Uint64 currentTick)
 
 	// »ç¸Á ÆÇÁ¤
 	if (newPlayerY < camera.y) {
+		ctx->resources->sounds.get(SoundResources::gameover)->play();
+		ctx->resources->musics.get(MusicResources::background)->stop();
 		ctx->router->changePage(PageKeys::endingPage);
 		return;
 	}

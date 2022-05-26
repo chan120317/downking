@@ -190,9 +190,6 @@
     <ClInclude Include="ResourceCollection.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="res\image\startwhite.png" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\sdl2_image.nuget.redist.2.0.5\build\native\sdl2_image.nuget.redist.targets" Condition="Exists('..\packages\sdl2_image.nuget.redist.2.0.5\build\native\sdl2_image.nuget.redist.targets')" />

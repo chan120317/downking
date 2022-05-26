@@ -23,5 +23,5 @@ void GameMusic::play()
 
 void GameMusic::stop()
 {
-
+	Mix_HaltMusic();
 }

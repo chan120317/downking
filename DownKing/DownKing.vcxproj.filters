@@ -171,9 +171,4 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="res\image\startwhite.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-  </ItemGroup>
 </Project>

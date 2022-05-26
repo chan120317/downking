@@ -40,8 +40,7 @@ enum class MusicResources {
 };
 
 enum class SoundResources {
-	opening,
+	start,
 	click,
 	gameover,
-
 };

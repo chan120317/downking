@@ -14,6 +14,7 @@ int main(int argc, char** argv) {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
 	Mix_VolumeMusic(10);
+	Mix_Volume(-1, 10);
 	TTF_Init();
 	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 600, 800, 0);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
@@ -98,6 +99,10 @@ GameResources* loadGameResources()
 
 	res->musics.set(MusicResources::background, new GameMusic("res/music/background.mp3"));
 	res->musics.set(MusicResources::menu, new GameMusic("res/music/menu.mp3"));
+
+	res->sounds.set(SoundResources::click, new GameSound("res/sound/click.wav"));
+	res->sounds.set(SoundResources::gameover, new GameSound("res/sound/gameover.wav"));
+	res->sounds.set(SoundResources::start, new GameSound("res/sound/start.wav"));
 
 	std::cout << "Resources loaded." << std::endl;
 
