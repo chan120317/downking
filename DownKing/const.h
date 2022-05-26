@@ -36,4 +36,5 @@ constexpr double GAME_FLOOR_MOVE_MIN_SPEED = 5.0;
 // 움직이는 발판의 최대 이동 속도
 constexpr double GAME_FLOOR_MOVE_MAX_SPEED = 30.0;
 
-
+// 발판 사이의 구멍 크기
+constexpr double GAME_FLOOR_HOLE_SIZE = 100.0;

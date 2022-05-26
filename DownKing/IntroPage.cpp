@@ -1,5 +1,6 @@
 #include "IntroPage.h"
 #include "common.h"
+#include <cstdlib>
 
 IntroPage::IntroPage(const GameContext* ctx) : ctx(ctx)
 {
@@ -34,6 +35,6 @@ void IntroPage::onMouseLeftDown(int x, int y)
 		ctx->router->changePage(PageKeys::gamePage);
 	}
 	if (x > 210 && y > 630 && x < 390 && y < 680) {
-		
+		exit(0);
 	}
 }

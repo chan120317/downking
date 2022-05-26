@@ -90,6 +90,9 @@
     <ClCompile Include="random.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DownFloorBlink.cpp">
+      <Filter>소스 파일\GamePage\Floor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="const.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DownFloorBlink.h">
+      <Filter>소스 파일\GamePage\Floor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

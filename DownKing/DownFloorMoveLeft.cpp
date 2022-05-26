@@ -33,12 +33,12 @@ void DownFloorMoveLeft::process(Uint64 currentTick)
 	if (holeLeft < 0) 
 		holeLeft = GAME_SCREEN_WIDTH + holeLeft;
 	
-	if (holeLeft > GAME_SCREEN_WIDTH - 100.0) {
-		lines.push_back(DownInfoFloor(holeLeft + 100 - GAME_SCREEN_WIDTH, holeLeft, -MOVESPEED));
+	if (holeLeft > GAME_SCREEN_WIDTH - GAME_FLOOR_HOLE_SIZE) {
+		lines.push_back(DownInfoFloor(holeLeft + GAME_FLOOR_HOLE_SIZE - GAME_SCREEN_WIDTH, holeLeft, -MOVESPEED));
 	}
 	else {
 		lines.push_back(DownInfoFloor(0, holeLeft, -MOVESPEED));
-		lines.push_back(DownInfoFloor(holeLeft + 100, GAME_SCREEN_WIDTH, -MOVESPEED));
+		lines.push_back(DownInfoFloor(holeLeft + GAME_FLOOR_HOLE_SIZE, GAME_SCREEN_WIDTH, -MOVESPEED));
 	}
 
 	

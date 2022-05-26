@@ -2,11 +2,12 @@
 #include "DownFloorStatic.h"
 #include "DownFloorMoveLeft.h"
 #include "DownFloorMoveRight.h"
+#include "DownFloorBlink.h"
 #include "random.h"
 
 DownFloorBase* DownFloorFactory::create()
 {
-	int rnum = randInt(0, 2);
+	int rnum = randInt(0, 3);
 
 	if (rnum == 0)
 		return new DownFloorStatic();
@@ -14,4 +15,6 @@ DownFloorBase* DownFloorFactory::create()
 		return new DownFloorMoveLeft();
 	else if (rnum == 2)
 		return new DownFloorMoveRight();
+	else if (rnum == 3)
+		return new DownFloorBlink();
 }
