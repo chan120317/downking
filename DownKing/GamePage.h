@@ -17,6 +17,7 @@ public:
 
 	void onKeyDown(SDL_Keycode keyCode);
 	void onKeyUp(SDL_Keycode keyCode);
+	void onMouseLeftDown(int x, int y);
 private:
 	const GameContext* ctx;
 
@@ -26,6 +27,8 @@ private:
 	std::tuple<bool, double, double> floorCheck(double newPlayerY, double newPlayerX, double lastPlayerY);
 
 	Uint64 lastTick;
+
+	bool isGameOver;
 
 	Point<double> playerPos;
 	Point<double> camera;

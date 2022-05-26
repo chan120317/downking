@@ -70,7 +70,7 @@ GameResources* loadGameResources()
 {
 	GameResources* res = new GameResources();
 
-	res->fonts.set(FontResources::uiFont, new GameFont("res/font/SBagroB.ttf", 16));
+	res->fonts.set(FontResources::uiFont, new GameFont("res/font/SBagroB.ttf", 25));
 	res->fonts.set(FontResources::resultFont, new GameFont("res/font/SEBANG Gothic Bold.ttf",16));
 
 	res->images.set(ImageResources::player, new GameImage("res/image/player.png", 32, 32));

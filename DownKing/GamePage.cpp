@@ -9,7 +9,8 @@
 GamePage::GamePage(const GameContext* ctx) : 
 	ctx(ctx),
 	lastTick(0),
-	playerDirection(0)
+	playerDirection(0),
+	isGameOver(false)
 {
 }
 
@@ -23,6 +24,7 @@ void GamePage::init()
 	ctx->resources->sounds.get(SoundResources::click)->play();
 
 	lastTick = 0;
+	isGameOver = false;
 
 	playerPos = Point<double>(100, 300);
 	playerV = Point<double>(0, 0);
@@ -55,7 +57,10 @@ void GamePage::tick(Uint64 currentTick)
 		lastTick = currentTick;
 		return;
 	}
-	this->process(currentTick);
+	
+	if (!isGameOver) {
+		this->process(currentTick);
+	}
 	this->render();
 	lastTick = currentTick;
 }
@@ -88,10 +93,16 @@ void GamePage::onKeyUp(SDL_Keycode keyCode)
 	}
 }
 
+void GamePage::onMouseLeftDown(int x, int y)
+{
+	if (isGameOver) {
+		this->init();
+	}
+}
+
 void GamePage::process(Uint64 currentTick)
 {
 	const auto t = double(currentTick - lastTick) / 100;
-
 	
 	if (playerPos.y - camera.y >= GAME_CAMERA_FULL_SPEED_LINE) {
 		camera.y += GAME_PLAYER_MAX_V_Y * t;
@@ -144,7 +155,8 @@ void GamePage::process(Uint64 currentTick)
 	if (newPlayerY < camera.y) {
 		ctx->resources->sounds.get(SoundResources::gameover)->play();
 		ctx->resources->musics.get(MusicResources::background)->stop();
-		ctx->router->changePage(PageKeys::endingPage);
+		//ctx->router->changePage(PageKeys::endingPage);
+		isGameOver = true;
 		return;
 	}
 
@@ -187,6 +199,21 @@ void GamePage::render()
 	for (auto floor : floors) {
 		floor->render(ctx, &converter);
 	}
+
+	{
+		auto font = ctx->resources->fonts.get(FontResources::uiFont);
+		long long score = (long long)(playerPos.y) / 100;
+		std::string str = "Score: ";
+		str += std::to_string(score);
+		ctx->renderer->drawText(font, str, 10, 10, { 255,255,255 });
+		
+	}
+
+
+	if (isGameOver) {
+
+	}
+
 
 	ctx->renderer->render();
 }
