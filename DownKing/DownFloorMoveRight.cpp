@@ -1,9 +1,8 @@
 #include "DownFloorMoveRight.h"
+#include "const.h"
 #include "common.h"
 #include "random.h"
 
-
-constexpr double MOVESPEED = 0.5;
 
 DownFloorMoveRight::DownFloorMoveRight() :lastTick(0), MOVESPEED(0.5), holeLeft(0)
 {
@@ -18,7 +17,7 @@ DownFloorMoveRight::~DownFloorMoveRight()
 void DownFloorMoveRight::init()
 {
 	lastTick = 0;
-	MOVESPEED = randDouble(5, 30);
+	MOVESPEED = randDouble(GAME_FLOOR_MOVE_MIN_SPEED, GAME_FLOOR_MOVE_MAX_SPEED);
 	auto left = randDouble(0, GAME_SCREEN_WIDTH);
 
 	holeLeft = left;

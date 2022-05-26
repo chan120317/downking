@@ -167,6 +167,9 @@
     <ClInclude Include="DownFloorMoveRight.h">
       <Filter>소스 파일\GamePage\Floor</Filter>
     </ClInclude>
+    <ClInclude Include="const.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\image\startwhite.png">

@@ -1,7 +1,5 @@
 #pragma once
-
-constexpr int GAME_SCREEN_WIDTH = 600;
-constexpr int GAME_SCREEN_HEIGHT = 800;
+#include "const.h"
 
 enum class PageKeys {
 	introPage,

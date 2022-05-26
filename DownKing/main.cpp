@@ -17,8 +17,9 @@ int main(int argc, char** argv) {
 	TTF_Init();
 	SDL_Window* window = SDL_CreateWindow("Middle Test", 100, 100, 600, 800, 0);
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
-	
-	std::cout << 111;
+
+	std::cout << "SDL2 loaded." << std::endl;
+
 	PageRouter* router = new PageRouter();
 	GameRenderer* gameRenderer = new GameRenderer(renderer);
 
@@ -32,6 +33,8 @@ int main(int argc, char** argv) {
 	router->use(PageKeys::endingPage, new EndingPage(gameContext));
 
 	router->init(PageKeys::introPage);
+
+	std::cout << "Everything loaded." << std::endl;
 
 	auto lastTick = SDL_GetTicks64();
 	while (true) {
@@ -95,6 +98,8 @@ GameResources* loadGameResources()
 
 	res->musics.set(MusicResources::background, new GameMusic("res/music/background.mp3"));
 	res->musics.set(MusicResources::menu, new GameMusic("res/music/menu.mp3"));
+
+	std::cout << "Resources loaded." << std::endl;
 
 	return res;
 }

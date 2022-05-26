@@ -14,7 +14,7 @@ DownFloorStatic::~DownFloorStatic()
 
 void DownFloorStatic::init()
 {
-	auto left = randDouble(0, GAME_SCREEN_WIDTH - 150.0);
+	auto left = randDouble(10, GAME_SCREEN_WIDTH - 150.0);
 	lines.push_back(DownInfoFloor(0, left, 0));
 	lines.push_back(DownInfoFloor(left + 100, GAME_SCREEN_WIDTH, 0));
 }

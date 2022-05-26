@@ -1,18 +1,10 @@
 #include <iostream>
+#include "const.h"
 #include "GamePage.h"
 #include "CoordinateConverter.h"
 #include "DownFloorFactory.h"
 
-constexpr double GAME_GRAVITY = 5.0;
-constexpr double GAME_PLAYER_MAX_V_Y = 80.0;
-constexpr double GAME_PLAYER_SPEED = 300.0;
-constexpr double GAME_SCROLL_SPEED = 10.0;
-constexpr double GAME_FLOOR_GAP = 150.0;
-constexpr double GAME_CAMERA_HALF_SPEED_LINE = 700;
-constexpr double GAME_CAMERA_FULL_SPEED_LINE = 780;
 
-constexpr double GAME_PLAYER_W = 32.0;
-constexpr double GAME_PLAYER_H = 32.0;
 
 GamePage::GamePage(const GameContext* ctx) : 
 	ctx(ctx),
