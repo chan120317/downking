@@ -98,7 +98,12 @@ void GamePage::onKeyUp(SDL_Keycode keyCode)
 void GamePage::onMouseLeftDown(int x, int y)
 {
 	if (isGameOver) {
-		this->init();
+		if (117 <= x && x <= 260 && 468 <= y && y <= 514) {
+			ctx->router->changePage(PageKeys::introPage);
+		}
+		if (350 <= x && x <= 495 && 468 <= y && y <= 514) {
+			this->init();
+		}
 	}
 }
 
@@ -154,7 +159,7 @@ void GamePage::process(Uint64 currentTick)
 	}
 
 	// 스코어 계산
-	score = (long long)(playerPos.y) / 100;
+	score = std::max((long long)(playerPos.y) / 100 - 6, 0ll);
 
 	// 사망 판정
 	if (newPlayerY < camera.y) {
@@ -217,7 +222,17 @@ void GamePage::render()
 
 
 	if (isGameOver) {
+		auto image = ctx->resources->images.get(ImageResources::gameoverModal);
+		ctx->renderer->drawImage(image, 50, 250, image->width, image->height);
 
+		auto font = ctx->resources->fonts.get(FontResources::scoreFont);
+		std::string sstr = "Score: ";
+		sstr += std::to_string(score);
+		ctx->renderer->drawText(font, sstr, 110, 380, { 0,0,0 });
+
+		std::string hsstr = "High Score: ";
+		hsstr += std::to_string(highScore);
+		ctx->renderer->drawText(font, hsstr, 300, 380, { 0,0,0 });
 	}
 
 

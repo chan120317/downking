@@ -72,6 +72,7 @@ GameResources* loadGameResources()
 
 	res->fonts.set(FontResources::uiFont, new GameFont("res/font/SBagroB.ttf", 25));
 	res->fonts.set(FontResources::resultFont, new GameFont("res/font/SEBANG Gothic Bold.ttf",16));
+	res->fonts.set(FontResources::scoreFont, new GameFont("res/font/DungGeunMo.ttf", 30));
 
 	res->images.set(ImageResources::player, new GameImage("res/image/player.png", 32, 32));
 	res->images.set(ImageResources::background, new GameImage("res/image/background.png", 600, 1600));
@@ -96,6 +97,8 @@ GameResources* loadGameResources()
 	res->images.set(ImageResources::blinkBlock2, new GameImage("res/image/ggam2.png", 64, 32));
 	res->images.set(ImageResources::blinkBlockleft, new GameImage("res/image/ggam1lmac.png", 40, 44));
 	res->images.set(ImageResources::blinkBlockright, new GameImage("res/image/ggam1rmac.png", 40, 44));
+
+	res->images.set(ImageResources::gameoverModal, new GameImage("res/image/gameover.png", 500, 320));
 
 	res->musics.set(MusicResources::background, new GameMusic("res/music/background.mp3"));
 	res->musics.set(MusicResources::menu, new GameMusic("res/music/menu.mp3"));

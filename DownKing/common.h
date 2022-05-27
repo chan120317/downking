@@ -10,6 +10,7 @@ enum class PageKeys {
 enum class FontResources {
 	uiFont,
 	resultFont,
+	scoreFont,
 };
 
 enum class ImageResources {
@@ -32,6 +33,7 @@ enum class ImageResources {
 	blinkBlock2,
 	blinkBlockleft,
 	blinkBlockright,
+	gameoverModal
 };
 
 enum class MusicResources {
